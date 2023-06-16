@@ -1,47 +1,44 @@
 {
-  "name": "react-three-vite",
-  "version": "1.0.1",
-  "description": "A simple React Three Fiber + Vite starter with an import-ready CodeSandbox config.",
-  "keywords": [
-    "r3f",
-    "react",
-    "three",
-    "vite",
-    "starter",
-    "react three fiber",
-    "sandbox",
-    "codesandbox"
+  "name": "@nodetoy/react-nodetoy",
+  "version": "0.1.24",
+  "files": [
+    "dist"
   ],
-  "author": "Benjamin Miles <talk@benjaminmiles.com> (https://github.com/benjaminmiles)",
-  "repository": "github:benjaminmiles/react-three-vite",
-  "license": "MIT",
-  "dependencies": {
-    "@nodetoy/react-nodetoy": "link:../",
-    "@react-three/drei": "^9.45.0",
-    "@react-three/fiber": "^8.9.1",
-    "leva": "^0.9.34",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6",
-    "three": "^0.146.0",
-    "use-error-boundary": "^2.0.6",
-    "valtio": "^1.7.6",
-    "wouter": "^2.9.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^2.2.0",
-    "vite": "^3.2.4"
+  "types": "./dist/NodeToy.d.ts",
+  "main": "./dist/react-nodetoy.umd.js",
+  "module": "./dist/react-nodetoy.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/react-nodetoy.es.js",
+      "require": "./dist/react-nodetoy.umd.js"
+    }
   },
   "scripts": {
-    "dev": "vite --host",
-    "sandbox": "APP_ENV=sandbox vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "demo": "cd example && npm run dev",
+    "dev": "tsc && vite build --watch",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "deploy": "yarn build && np"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "@types/three": "^0.146.0",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
+    "typescript": "^4.3.2",
+    "vite": "^2.6.4",
+    "vite-plugin-dts": "^1.7.1"
+  },
+  "peerDependencies": {
+    "@react-three/fiber": ">=8",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "three": ">=0.143.0"
+  },
+  "dependencies": {
+    "@nodetoy/shared-nodetoy": ">=0.2.21",
+    "@nodetoy/three-nodetoy": ">=0.1.36",
+    "@react-three/fiber": "^8.9.1",
+    "three": ">=0.143.0",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  }
 }
