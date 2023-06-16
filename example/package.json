@@ -16,7 +16,7 @@
   "repository": "github:benjaminmiles/react-three-vite",
   "license": "MIT",
   "dependencies": {
-    "@nodetoy/react-nodetoy-studentwork": "link:../",
+    "@nodetoy/react-nodetoy": "link:../",
     "@react-three/drei": "^9.45.0",
     "@react-three/fiber": "^8.9.1",
     "leva": "^0.9.34",
